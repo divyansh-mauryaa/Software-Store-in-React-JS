@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+##Tutorial to Install, deploy, edit and add softwares
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Download .zip or `git clone https://github.com/divyansh-mauryaa/Software-Store-in-React-JS.git`
+2. Extract .zip and open folder
+3. Run `npm install` or `npm i`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. To build and deploy website Project run `npm run build` for building project.
+6. Deploy via Netify, Firebase etc... platforms.
+7. To edit or add software cards, go to  `data.js` and add objects in {} and add details as in the above software objects.
+8. if don't have link for a specific platform then give link [https://example.com](https://example.com) or whatever you want.
 
 ## Available Scripts
 
