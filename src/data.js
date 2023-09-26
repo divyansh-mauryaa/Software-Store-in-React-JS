@@ -35,6 +35,8 @@ const SoftwareData = [
         company: "Avast, Gen Digital",
         company_logo: "https://upload.wikimedia.org/wikipedia/en/4/4a/CCleaner_logo_2013.png",
     },
+    //Add more Objects as needed, make sure to add the data like the above
+    //You can manage your software inventory in Excel file.
 ];
 
 export default SoftwareData;
