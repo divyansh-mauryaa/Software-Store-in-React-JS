@@ -18,16 +18,22 @@ import {
   Button,
   TextField,
 } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import InputBase from '@mui/material/InputBase';
+import AppBar from '@mui/material/AppBar';
 
-import { styled } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles';
 
 //MUI Icons
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MicrosoftIcon from '@mui/icons-material/Microsoft';
-import { blue, red } from '@mui/material/colors';
+import { blue, red, blueGrey } from '@mui/material/colors';
 import AppleIcon from '@mui/icons-material/Apple';
 import LaptopIcon from '@mui/icons-material/Laptop';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
 
+//Card Expand Button Logic
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -39,8 +45,52 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+//AppBar Search bar style logic
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: 'auto',
+  },
+}));
+
+//Search bar wrapper style logic
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '19ch',
+      '&:focus': {
+        width: '39ch',
+      },
+    },
+  },
+}));
 
 function App() {
+  //State Expanded
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -62,22 +112,40 @@ function App() {
 
   return (
     <div className="Container-fluid">
-      <Typography id='heading' variant='h1'>Software-Store</Typography>
+      {/* AppBar for React App */}
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            Software Store
+          </Typography>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search Softwares…"
+              inputProps={{ 'aria-label': 'search' }}
+              value={searchTerm}
+              onChange={handleSearchChange}
+              // style={{ width: 300 }}
+            />
+          </Search>
+        </Toolbar>
+      </AppBar>
+      <br /><br /><br />
+
+
+      {/* <Typography id='heading' variant='h1'>Software-Store</Typography> */}
       <br />
       <Typography id='sub-heading' variant='h3'>Browse Softwares for Mac, Linux and Windows form one place, Orignal and Virus free!</Typography>
       <br />
-      <center>
-        <div id='searchbarzone'>
-          <TextField
-            id='standard-basic'
-            label="Search Your Favorate Software..."
-            variant="standard"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            style={{ width: 1000, }}
-          />
-        </div>
-      </center>
+      <br /><br /><br />
+      {/* <Typography variant='h5'>Software List</Typography> */}
       <br /><br /><br />
       <div className="row" id='card-row'>
         {filteredSoftwareData.map((software) => (
