@@ -81,9 +81,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
+      //Default Width
       width: '19ch',
       '&:focus': {
-        width: '39ch',
+        //onClick expanded Width
+        width: '30ch',
       },
     },
   },
@@ -143,6 +145,7 @@ function App() {
       {/* <Typography id='heading' variant='h1'>Software-Store</Typography> */}
       <br />
       <Typography id='sub-heading' variant='h3'>Browse Softwares for Mac, Linux and Windows form one place, Orignal and Virus free!</Typography>
+      <Typography id='sub-heading' variant='h6'><small style={{color: 'red'}}>Note: If the download link for a platform goes to an example domain, then the app is not avalable for that OS(Platform) </small></Typography>
       <br />
       <br /><br /><br />
       {/* <Typography variant='h5'>Software List</Typography> */}
@@ -163,6 +166,7 @@ function App() {
                 height="154"
                 image={software.logo}
                 alt={software.name}
+                title={software.name + " " + "logo"}
               />
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
