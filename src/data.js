@@ -29,14 +29,12 @@ const SoftwareData = [
         discription: "CCleaner is a small, effective optimization app designed to reclaim storage space of your devices. It does this by cleaning out the 'junk' that has accumulated over time. Junk could be: Temporary or deleted files.",
         image1: "https://storage.googleapis.com/pr-newsroom-wp/1/2023/01/AppleCompetition-FTRHeader_V2-1440x733.png",
         logo: "https://oceanofdmg.com/wp-content/uploads/2021/12/CCleaner-Professional-2022-for-Mac-Free-Download-OceanofDMG.com_.jpg",
-        windows: 'https://download.scdn.co/SpotifySetup.exe',
-        linux: 'https://www.spotify.com/de-en/download/linux/',
-        mac: 'https://download.scdn.co/SpotifyInstaller.zip',
+        windows: 'https://bits.avcdn.net/productfamily_CCLEANER/insttype_FREE/platform_WIN_PIR/installertype_ONLINE/build_RELEASE/cookie_mmm_ccl_003_999_a7i_m',
+        linux: 'https://example.com/',
+        mac: 'https://download.ccleaner.com/mac/CCMacSetup209.dmg',
         company: "Avast, Gen Digital",
         company_logo: "https://upload.wikimedia.org/wikipedia/en/4/4a/CCleaner_logo_2013.png",
     },
-    //Add more Objects as needed, make sure to add the data like the above
-    //You can manage your software inventory in Excel file.
 ];
 
 export default SoftwareData;
