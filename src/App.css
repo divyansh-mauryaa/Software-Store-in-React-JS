@@ -10,7 +10,7 @@
   text-align: center;
   font-weight: light;
   margin-top: 5px;
-  color: red;
+  /* color: red; */
 }
 
 #card-row{
@@ -22,10 +22,15 @@
 }
 
 #searchbarzone{
-  background-color: whitesmoke;
+  background-color: rgb(46, 40, 40);
   padding: 20px;
   border-radius: 20px;
   /* background-color: rgb(202, 180, 180); */
   width: 999px;
   align-content: center;
+}
+
+#standard-basic{
+  color: white;
+  border-bottom: whitesmoke;
 }
